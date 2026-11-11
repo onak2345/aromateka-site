@@ -77,4 +77,23 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+
+  // Мягкая анимация чисел: показатели проявляются при прокрутке к ним.
+  const numericItems = document.querySelectorAll(
+    '.advantage-number, .hero-caption span:first-child, .stat-box strong, .card-meta b, .catalog-count, .hero-note__count, [data-number]'
+  );
+  if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const numberObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('number-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.35 });
+    numericItems.forEach((item) => {
+      item.classList.add('number-animate');
+      numberObserver.observe(item);
+    });
+  }
 });
