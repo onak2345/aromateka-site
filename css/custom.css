@@ -25,11 +25,42 @@
 /* Реальные фотографии парфюмерии */
 .perfume-card__image{background-position:center;background-size:cover;background-repeat:no-repeat}
 .perfume-card__image .bottle,.detail-visual .bottle{display:none}
-.image-rose{background-image:linear-gradient(180deg,rgba(35,22,18,.03),rgba(35,22,18,.18)),url('https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=1000&q=85')}
-.image-sand{background-image:linear-gradient(180deg,rgba(35,22,18,.02),rgba(35,22,18,.12)),url('https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=1000&q=85')}
-.image-green{background-image:linear-gradient(180deg,rgba(35,22,18,.02),rgba(35,22,18,.12)),url('https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=1000&q=85')}
-.image-peach{background-image:linear-gradient(180deg,rgba(35,22,18,.02),rgba(35,22,18,.12)),url('https://images.unsplash.com/photo-1590736969955-71cc94901144?auto=format&fit=crop&w=1000&q=85')}
-.image-blue{background-image:linear-gradient(180deg,rgba(35,22,18,.02),rgba(35,22,18,.12)),url('https://images.unsplash.com/photo-1595425970377-c9703cf48b6d?auto=format&fit=crop&w=1000&q=85')}
-.image-yellow{background-image:linear-gradient(180deg,rgba(35,22,18,.02),rgba(35,22,18,.12)),url('https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=1000&q=85')}
+.image-rose{background-color:#eee8e1;background-image:url("https://www.skins.nl/media/42/f4/5f/1750248126/727cc1d4afd9ba40f8f019257378adf0.png?ts=1751934516");background-position:center;background-size:contain;background-repeat:no-repeat}
+.image-sand{background-color:#eee8e1;background-image:url("https://bs24.swiss/cdn/shop/products/yves-saint-laurent-libre-eau-de-parfum-fur-damen_1.jpg?v=1732361212&width=1080");background-position:center;background-size:contain;background-repeat:no-repeat}
+.image-green{background-color:#eee8e1;background-image:url("https://cdn.fynd.com/v2/falling-surf-7c8bb8/fyprod/wrkr/products/pictures/item/free/original/000000000494238476/JhwP41w8Yv5-000000000494238476_2.jpg");background-position:center;background-size:contain;background-repeat:no-repeat}
+.image-peach{background-color:#eee8e1;background-image:url("https://u.makeup.com.ua/1/19/19gglrlwkvs6.jpg");background-position:center;background-size:contain;background-repeat:no-repeat}
+.image-blue{background-color:#eee8e1;background-image:url("https://www.tomfordbeauty.com/cdn/shop/files/tf_sku_T1XF01_2000x2000_1.jpg?v=1774621231&width=2000");background-position:center;background-size:contain;background-repeat:no-repeat}
+.image-yellow{background-color:#eee8e1;background-image:url("https://beautyhouse.com/cdn/shop/files/06.png?v=1723877640&width=1600");background-position:center;background-size:contain;background-repeat:no-repeat}
 .detail-visual{background-size:cover;background-position:center;background-repeat:no-repeat}
 .about-art{background:linear-gradient(180deg,rgba(30,22,18,.12),rgba(30,22,18,.35)),url('https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=1200&q=85') center/cover no-repeat}
+
+/* Brand identity and editorial refinements */
+.brand{font-size:34px;font-weight:700;letter-spacing:1.2px;color:#302722!important;text-transform:uppercase;text-shadow:0 1px 0 rgba(255,255,255,.6)}
+.brand span{color:#a66f61;font-size:1.12em}
+.brand small{font-size:9px;letter-spacing:2.8px;font-weight:700}
+.brand--footer{font-size:32px}
+.advantage-icon{font-size:43px;line-height:1.1;margin-bottom:24px;color:#9b6d61;text-shadow:0 5px 15px rgba(155,109,97,.13)}
+.contact-icon{font-size:22px;min-width:28px;display:inline-flex;align-items:center;justify-content:center;color:#c69a8c}
+.footer-contact{display:flex;align-items:center;gap:10px}
+.btn-dark-soft{font-weight:700;padding:12px 18px}
+.about-photo-story{padding:30px 0 90px;background:#fbf9f6}
+.about-photo{width:100%;height:100%;object-fit:cover;display:block}
+.about-photo--wide{min-height:390px;max-height:470px}
+.about-photo--small{height:230px}
+.about-title{font:500 clamp(34px,4vw,48px)/1.16 var(--serif);letter-spacing:-1px;margin-bottom:20px}
+.about-copy{font-size:13px;line-height:2;color:#756d66}
+.home-discover{padding:80px 0;background:#eee5dd}
+.home-discover__inner{display:grid;grid-template-columns:1fr  .9fr;gap:55px;align-items:center}
+.home-discover h2{font:500 clamp(38px,4vw,54px)/1.12 var(--serif);margin:0 0 18px}
+.home-discover h2 em{color:#a5796e}
+.home-discover p{max-width:470px;color:#756d66;font-size:13px;line-height:1.9}
+.home-discover img{width:100%;height:360px;object-fit:cover}
+@media(max-width:767.98px){.brand{font-size:28px}.home-discover__inner{grid-template-columns:1fr;gap:28px}.home-discover img{height:260px}.about-photo--wide{min-height:280px}.about-photo--small{height:150px}.advantage-icon{font-size:38px}}
+
+/* Социальные сети: ВКонтакте, Telegram и MAX */
+.footer-socials{margin-top:18px}
+.footer-socials h3{margin:0 0 12px;font-size:13px;letter-spacing:.12em;text-transform:uppercase}
+.social-links--footer{display:flex;flex-wrap:wrap;gap:10px}
+.social-links--footer a{display:inline-flex;align-items:center;gap:9px;padding:9px 13px;border:1px solid rgba(255,255,255,.22);border-radius:999px;color:inherit;font-size:13px;transition:background .2s,border-color .2s,transform .2s}
+.social-links--footer a:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.55);transform:translateY(-2px)}
+.social-mark{display:inline-grid;place-items:center;width:27px;height:27px;border-radius:50%;background:rgba(255,255,255,.14);font-size:10px;font-weight:700;letter-spacing:0}
