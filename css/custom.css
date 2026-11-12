@@ -97,3 +97,146 @@
 .perfume-card__image{background-color:#eee8e1}
 .perfume-card__photo{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:18px;mix-blend-mode:multiply}
 .perfume-card__image .badge{z-index:1}
+
+/* ===== Кнопка смены темы ===== */
+.theme-toggle{position:relative;width:42px;height:42px;flex:0 0 42px;border-radius:50%;border:1px solid rgba(60,45,38,.18);background:rgba(255,255,255,.55);color:#4a3b34;display:inline-grid;place-items:center;cursor:pointer;overflow:hidden;transition:background .3s,border-color .3s,color .3s,transform .2s}
+.theme-toggle:hover{transform:scale(1.06);border-color:#a66f61;color:#a66f61}
+.theme-toggle:focus-visible{outline:2px solid #a66f61;outline-offset:2px}
+.theme-toggle svg{grid-area:1/1;transition:transform .6s cubic-bezier(.4,0,.2,1),opacity .35s}
+.theme-toggle .icon-moon{opacity:0;transform:rotate(-90deg) scale(.4)}
+[data-bs-theme="dark"] .theme-toggle .icon-sun{opacity:0;transform:rotate(90deg) scale(.4)}
+[data-bs-theme="dark"] .theme-toggle .icon-moon{opacity:1;transform:rotate(0) scale(1)}
+.theme-toggle.is-spinning{animation:themeSpin .6s ease}
+@keyframes themeSpin{50%{transform:scale(.8) rotate(25deg)}}
+
+/* Анимация переключения темы: круговая волна (View Transitions API) */
+::view-transition-old(root),::view-transition-new(root){animation:none;mix-blend-mode:normal}
+::view-transition-old(root){z-index:1}
+::view-transition-new(root){z-index:2}
+.theme-fade,.theme-fade *{transition:background-color .55s ease,color .55s ease,border-color .55s ease,fill .55s ease!important}
+
+/* ===== Тёмная тема ===== */
+[data-bs-theme="dark"]{color-scheme:dark;--bs-body-bg:#15110e;--bs-body-color:#efe7df;--bs-border-color:#3a322c;--bs-secondary-color:#b3a89e;--ink:#f1e9e1;--muted:#b0a59b;--paper:#1c1713;--cream:#26201b;--line:#3a322c;--accent:#e0a193}
+[data-bs-theme="dark"] body{background:#15110e;color:#efe7df}
+[data-bs-theme="dark"] a:hover{color:#e0a193}
+[data-bs-theme="dark"] .site-header{background:rgba(21,17,14,.9);border-bottom-color:rgba(255,255,255,.08)}
+[data-bs-theme="dark"] .brand{color:#f6eee7!important}
+[data-bs-theme="dark"] .brand span{color:#e0a193}
+[data-bs-theme="dark"] .brand small{color:#a99d92}
+[data-bs-theme="dark"] .nav-link{color:#d8cfc6!important}
+[data-bs-theme="dark"] .nav-link:hover,[data-bs-theme="dark"] .nav-link.active{color:#e8b4a6!important}
+[data-bs-theme="dark"] .navbar-toggler{border-color:rgba(255,255,255,.28)}
+[data-bs-theme="dark"] .navbar-toggler-icon{filter:invert(1)}
+[data-bs-theme="dark"] .theme-toggle{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.2);color:#f0d9a8}
+[data-bs-theme="dark"] .theme-toggle:hover{color:#e8b4a6;border-color:#e0a193}
+[data-bs-theme="dark"] .btn-dark{background:#ecdcd2;border-color:#ecdcd2;color:#241e1a}
+[data-bs-theme="dark"] .btn-dark:hover,[data-bs-theme="dark"] .btn-dark:focus{background:#e0a193;border-color:#e0a193;color:#241e1a}
+[data-bs-theme="dark"] .btn-outline-dark{color:#efe7df;border-color:#6d6159;background:transparent}
+[data-bs-theme="dark"] .btn-outline-dark:hover,[data-bs-theme="dark"] .btn-outline-dark:focus{background:#efe7df;border-color:#efe7df;color:#1d1814}
+[data-bs-theme="dark"] .btn-dark-soft{background:#2f2823;border-color:#3d342e;color:#f0e3da}
+[data-bs-theme="dark"] .btn-dark-soft:hover{background:#ecdcd2;border-color:#ecdcd2;color:#241e1a}
+[data-bs-theme="dark"] .hero-section,[data-bs-theme="dark"] .page-hero{background:#1c1713}
+[data-bs-theme="dark"] .popular-section,[data-bs-theme="dark"] .about-values{background:#1a1612}
+[data-bs-theme="dark"] .about-photo-story{background:#15110e}
+[data-bs-theme="dark"] .home-discover{background:#1f1915}
+[data-bs-theme="dark"] .quote-section,[data-bs-theme="dark"] .about-cta,[data-bs-theme="dark"] .order-aside{background:#251e19}
+[data-bs-theme="dark"] .quote-section p,[data-bs-theme="dark"] .order-aside p{color:#b5a79b}
+[data-bs-theme="dark"] .hero-title em,[data-bs-theme="dark"] .page-hero h1 em,[data-bs-theme="dark"] .section-heading h2 em,[data-bs-theme="dark"] .detail-title em,[data-bs-theme="dark"] .notes-section h2 em,[data-bs-theme="dark"] .character-section h2 em,[data-bs-theme="dark"] .form-panel h2 em,[data-bs-theme="dark"] .order-aside h3 em,[data-bs-theme="dark"] .quote-section em,[data-bs-theme="dark"] .home-discover h2 em,[data-bs-theme="dark"] .about-title em,[data-bs-theme="dark"] .about-cta em{color:#e0a193}
+[data-bs-theme="dark"] .eyebrow,[data-bs-theme="dark"] .perfume-brand{color:#d9a79b}
+[data-bs-theme="dark"] .eyebrow span{background:#d9a79b}
+[data-bs-theme="dark"] .hero-copy,[data-bs-theme="dark"] .detail-lead,[data-bs-theme="dark"] .home-discover p,[data-bs-theme="dark"] .about-copy,[data-bs-theme="dark"] .page-hero p,[data-bs-theme="dark"] .section-heading>p,[data-bs-theme="dark"] .advantage-card p,[data-bs-theme="dark"] .perfume-card__body>p,[data-bs-theme="dark"] .note-card p,[data-bs-theme="dark"] .character-section p,[data-bs-theme="dark"] .mini-info p,[data-bs-theme="dark"] .accordion-body,[data-bs-theme="dark"] .stat-box small,[data-bs-theme="dark"] .empty-state,[data-bs-theme="dark"] .success-modal p{color:#b0a59b}
+[data-bs-theme="dark"] .hero-note{color:#a09186}
+[data-bs-theme="dark"] .advantage-card,[data-bs-theme="dark"] .perfume-card,[data-bs-theme="dark"] .form-panel,[data-bs-theme="dark"] .stat-box,[data-bs-theme="dark"] .note-card,[data-bs-theme="dark"] .character-section,[data-bs-theme="dark"] .empty-state,[data-bs-theme="dark"] .alert-soft{background:#211b17;border-color:#352c26}
+[data-bs-theme="dark"] .alert-soft{color:#cdbfb4}
+[data-bs-theme="dark"] .advantage-number{color:#7a6d62}
+[data-bs-theme="dark"] .advantage-icon{color:#d9a79b}
+[data-bs-theme="dark"] .card-meta{border-color:#352c26}
+[data-bs-theme="dark"] .card-meta span{color:#a0958b}
+[data-bs-theme="dark"] .card-meta b{color:#eadfd6}
+[data-bs-theme="dark"] .text-link,[data-bs-theme="dark"] .link-btn{border-bottom-color:#7d5f56}
+[data-bs-theme="dark"] .text-link:hover,[data-bs-theme="dark"] .link-btn:hover{color:#e0a193}
+[data-bs-theme="dark"] .mini-info{border-left-color:#3d342e}
+[data-bs-theme="dark"] .note-card{border-top-color:#7d5f56}
+[data-bs-theme="dark"] .product-table{--bs-table-bg:transparent;--bs-table-color:#efe7df;border-color:#352c26}
+[data-bs-theme="dark"] .product-table th{background:#211b17;color:#efe7df}
+[data-bs-theme="dark"] .product-table td{background:transparent;color:#d8cfc6}
+[data-bs-theme="dark"] .accordion-item{background:transparent;border-bottom-color:#352c26;color:#efe7df}
+[data-bs-theme="dark"] .accordion-button{background:transparent;color:#efe7df}
+[data-bs-theme="dark"] .accordion-button:not(.collapsed){background:transparent;color:#e0a193}
+[data-bs-theme="dark"] .form-control,[data-bs-theme="dark"] .form-select{background-color:#1e1814;color:#efe7df;border-color:#3d342e}
+[data-bs-theme="dark"] .form-control::placeholder{color:#8e8379}
+[data-bs-theme="dark"] .form-control:focus,[data-bs-theme="dark"] .form-select:focus{background-color:#221b17;color:#fff}
+[data-bs-theme="dark"] .input-group-text{background:#2a221d;border-color:#3d342e;color:#e0a193}
+[data-bs-theme="dark"] .form-label,[data-bs-theme="dark"] .form-check-label{color:#cdbfb4}
+[data-bs-theme="dark"] .contact-line{border-bottom-color:#352c26}
+[data-bs-theme="dark"] .contact-decoration{color:#2c241f}
+[data-bs-theme="dark"] .contact-icon{color:#e0a193}
+[data-bs-theme="dark"] .social-links a{border-bottom-color:#7d5f56}
+[data-bs-theme="dark"] .modal-content{background:#1e1814;color:#efe7df;border:1px solid #352c26}
+[data-bs-theme="dark"] .site-footer{background:#0f0c0a}
+[data-bs-theme="dark"] .footer-bottom{border-top-color:#2c2520}
+[data-bs-theme="dark"] .ticker{background:#0f0c0a}
+/* фото парфюмов остаются на светлой «подложке» */
+[data-bs-theme="dark"] .perfume-card__image{background-color:#eee8e1}
+[data-bs-theme="dark"] .perfume-card__photo{mix-blend-mode:multiply}
+
+/* ===== Поиск на главной ===== */
+.hero-search{display:flex;gap:8px;max-width:440px}
+.hero-search .form-control{flex:1;min-width:0}
+.hero-search .btn{white-space:nowrap}
+
+/* ===== Каталог: панель поиска и фильтров ===== */
+.catalog-toolbar{flex-wrap:wrap;align-items:flex-end}
+.catalog-tools{display:flex;flex-wrap:wrap;gap:10px;flex:1 1 560px;justify-content:flex-end;align-items:stretch}
+.catalog-tools .form-select{width:auto;min-width:160px;flex:0 1 180px}
+.search-box{position:relative;flex:1 1 260px;min-width:200px}
+.search-box .form-control{padding-left:38px;padding-right:36px;height:100%}
+.search-box__icon{position:absolute;left:13px;top:50%;transform:translateY(-52%);font-size:19px;color:#a17a6e;pointer-events:none}
+.search-box__clear{position:absolute;right:8px;top:50%;transform:translateY(-50%);width:26px;height:26px;border:0;border-radius:50%;background:rgba(120,90,78,.14);color:inherit;line-height:1;font-size:18px;cursor:pointer}
+.search-box__clear:hover{background:rgba(120,90,78,.28)}
+.tool-btn{display:inline-flex;align-items:center;gap:7px;padding:11px 16px;white-space:nowrap}
+.tool-btn__count{display:inline-grid;place-items:center;min-width:20px;height:20px;padding:0 5px;border-radius:10px;background:rgba(120,90,78,.16);font-size:10px}
+.btn-outline-dark.is-on{background:#302a26;color:#fff;border-color:#302a26}
+[data-bs-theme="dark"] .btn-outline-dark.is-on{background:#ecdcd2;color:#241e1a;border-color:#ecdcd2}
+[data-bs-theme="dark"] .search-box__icon{color:#d9a79b}
+@media(max-width:767.98px){.catalog-tools{flex-basis:100%;justify-content:stretch}.catalog-tools .form-select{flex:1 1 140px}.tool-btn{flex:1 1 auto;justify-content:center}}
+
+/* ===== Карточки: избранное и быстрый просмотр ===== */
+.fav-btn{position:absolute;top:14px;right:14px;z-index:3;width:38px;height:38px;border-radius:50%;border:1px solid rgba(95,73,61,.15);background:rgba(255,255,255,.92);color:#8c655c;display:grid;place-items:center;padding:0;cursor:pointer;transition:transform .2s,color .2s,background .2s}
+.fav-btn:hover{transform:scale(1.1);color:#c2564f}
+.fav-btn svg path{transition:fill .25s}
+.fav-btn.is-active{color:#c2564f;background:#fff}
+.fav-btn.is-active svg path{fill:currentColor}
+.fav-btn.pop{animation:favPop .45s cubic-bezier(.3,1.6,.5,1)}
+@keyframes favPop{0%{transform:scale(.7)}60%{transform:scale(1.28)}100%{transform:scale(1)}}
+.card-actions{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.link-btn{background:none;border:0;border-bottom:1px solid #b89a8d;padding:0 0 4px;font-size:10px;font-weight:700;letter-spacing:.5px;color:inherit;cursor:pointer}
+.link-btn:hover{color:#a16f63}
+.perfume-item.is-picked .perfume-card{box-shadow:0 0 0 2px #c28f80,0 22px 55px rgba(120,70,55,.28);animation:pickPulse 1.2s ease 2}
+@keyframes pickPulse{50%{transform:translateY(-8px) scale(1.015)}}
+
+/* Быстрый просмотр */
+.quick-view{position:relative;border-radius:2px;overflow:hidden;border:0}
+.qv-close{position:absolute;top:14px;right:14px;z-index:5;background-color:rgba(255,255,255,.8);border-radius:50%;padding:9px;opacity:1}
+.qv-photo{background:#eee8e1;display:flex;align-items:center;justify-content:center;min-height:300px;padding:24px}
+.qv-photo img{max-width:100%;max-height:380px;object-fit:contain;mix-blend-mode:multiply}
+.qv-body{padding:clamp(24px,4vw,40px)}
+.qv-body h2{font:500 clamp(26px,3vw,34px)/1.15 var(--serif);margin:0 0 12px}
+.qv-body p{font-size:13px;color:var(--muted);line-height:1.85}
+.qv-notes{margin:18px 0}
+.qv-notes span{display:block;font-size:8px;letter-spacing:1.5px;font-weight:700;color:#a17a6e;margin-bottom:6px}
+.qv-notes strong{font:500 15px var(--serif)}
+.qv-meta{display:flex;justify-content:space-between;gap:10px;border-top:1px solid #eee8e1;border-bottom:1px solid #eee8e1;padding:12px 0;margin-bottom:20px}
+.qv-meta span{font-size:10px;color:#958980}
+.qv-meta strong{display:block;font-size:12px;font-weight:600;margin-top:3px}
+[data-bs-theme="dark"] .qv-meta{border-color:#352c26}
+[data-bs-theme="dark"] .qv-body p{color:#b0a59b}
+[data-bs-theme="dark"] .qv-notes span{color:#d9a79b}
+#qvFav.is-on{background:#c2564f;border-color:#c2564f;color:#fff}
+
+/* Всплывающая подсказка */
+.snack{position:fixed;left:50%;bottom:28px;z-index:2000;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:#302a26;color:#fff;font-size:13px;padding:11px 20px;border-radius:999px;box-shadow:0 12px 30px rgba(0,0,0,.28);transition:opacity .3s,transform .3s}
+.snack.show{opacity:1;transform:translate(-50%,0)}
+[data-bs-theme="dark"] .snack{background:#ecdcd2;color:#241e1a}
+
+@media(prefers-reduced-motion:reduce){.theme-toggle svg,.fav-btn,.fav-btn svg path,.snack{transition:none}.fav-btn.pop,.theme-toggle.is-spinning,.perfume-item.is-picked .perfume-card{animation:none}}
